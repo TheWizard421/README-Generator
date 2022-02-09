@@ -19,9 +19,9 @@ function generateMarkdown(data) {
   ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [Test Instructions](#test instructions)
+* [Test Instructions](#test-instructions)
 * [Contributions](#contributions)
-* [Credits](#credits)
+* [Questions](#questions)
 * [License](#license)
 
   ## Installation
@@ -36,8 +36,9 @@ function generateMarkdown(data) {
   ## Contributions
   ${data.contribution}
 
-  ## Credits
-  ${data.credits}
+  ## Questions
+  [${data.email}](mailto:${data.email})\n
+  [${data.github}](https://github.com/${data.github})
   
   ## License
   [![License](https://img.shields.io/badge/License-${data.license}-Green.svg)](#)

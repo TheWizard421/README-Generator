@@ -24,20 +24,39 @@ const questions = [
         message:"How will this be used?"
     },
     {
-        type:"checkbox",
+        type:"list",
         name:"license",
         message:"Please Select Licenses that Apply",
-        choices:["MIT","Apache2.0","MIT/Apache-2.0"]
+        choices:["MIT","Apache2.0","MIT/Apache-2.0","GPL"]
+    },
+    {
+      type:"input",
+      name:"test",
+      message:`How do you test your Application?`
+    },
+    {
+      type:"input",
+      name:"contribution",
+      message:"Please list any and all contributors"
+    },
+    {
+      type:"input",
+      name:"email",
+      message:"Enter Email Address"
+    },
+    {
+      type:"input",
+      name:"github",
+      message:"Enter GitHub Username"
     }
 ];
 
 
 // TODO: Create a function to write README file
-function writeToFile() {
-fs.writeToFile(README.md, JSON.stringify); {
-    if (err) {
-    return console.log(err);
-  }};
+function writeToFile(data) {
+fs.writeFile("README.md", data, function(err) {
+    if (err) throw err
+    });
 }
 
 // TODO: Create a function to initialize app
@@ -46,7 +65,7 @@ function init() {
     .then((answers) => {
     console.log(answers)
     console.log(generateMarkdown(answers))   
-    writeToFile() 
+    writeToFile(generateMarkdown(answers)) 
       })
     
       .catch((error) => {
@@ -59,5 +78,4 @@ function init() {
 }
 
 // Function call to initialize app
-//init();
-writeToFile()
+init();
